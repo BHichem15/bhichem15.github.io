@@ -150,10 +150,10 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Set modal details (customize this per project)
             modalDetails.innerHTML = `
-                <li>Responsive design that works on all devices</li>
-                <li>Modern UI/UX principles applied</li>
-                <li>Optimized for performance</li>
-                <li>Clean, maintainable code</li>
+                <li>Real-time system performance monitoring</li>
+                <li>Simple and user-friendly graphical interface</li>
+                <li>Works on Windows, Linux, and MacOS</li>
+                <li>Lightweight and resource-efficient</li>
             `;
             
             // Show modal

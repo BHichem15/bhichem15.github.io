@@ -13,7 +13,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    font-family: 'Orbitron','Calibre', 'Inter', 'San Francisco', 'SF Pro Text', -apple-system, system-ui, sans-serif;
+    font-weight: 400;
+    letter-spacing: 2px;
 }
 
 body {

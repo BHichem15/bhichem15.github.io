@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | B-Hichem</title>
+    <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Additional styles specific to thank-you page */
+        .thank-you-section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .thank-you-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .thank-you-logo {
+            width: 200px;
+            height: 200px;
+            margin-bottom: 2rem;
+            border-radius: 50%;
+            border: 2px solid var(--highlight);
+            padding: 1rem;
+        }
+        
+        .thank-you-title {
+            font-size: 2.5rem;
+            color: var(--light-silver);
+            margin-bottom: 1.5rem;
+        }
+        
+        .thank-you-text {
+            font-size: 1.2rem;
+            color: var(--silver);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+        }
+        
+        .back-home-btn {
+            padding: 1rem 2rem;
+            background-color: var(--highlight);
+            color: var(--dark-blue);
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+            display: inline-block;
+        }
+        
+        .back-home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(100, 255, 218, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <div class="cursor"></div>
+    <main>
+        <section id="thank-you" class="thank-you-section">
+            <img src="images/Logo.png" alt="B-Hichem Logo" class="thank-you-logo">
+            <div class="thank-you-content">
+                <h1 class="thank-you-title">Thank You!</h1>
+                <p class="thank-you-text">I've received your message and will get back to you as soon as possible. In the meantime, feel free to explore more of my work or connect with me on social media.</p>
+                <a href="index.html" class="back-home-btn">Back to Homepage</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Bourenane Chaabane. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="script.js"></script>
+    
+    <script>
+        // Mobile navigation toggle
+        document.querySelector('.burger').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on links
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-links').classList.remove('active');
+                document.querySelector('.burger').classList.remove('active');
+            });
+        });
+        
+        // Initialize ScrollReveal
+        ScrollReveal().reveal('.thank-you-content', {
+            delay: 200,
+            distance: '50px',
+            origin: 'bottom',
+            duration: 1000
+        });
+    </script>
+</body>
+</html>
