@@ -215,19 +215,42 @@
         <section id="contact" class="contact">
             <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
             <div class="contact-container">
-                <form class="contact-form" action="https://formspree.io/f/your-form-id" method="POST" class="contact-form">
+                <form class="contact-form" action="https://formsubmit.co/gtag3225@gmail.com" method="POST">
+                    <!-- Name input -->
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
                         <label for="name">Name</label>
                     </div>
+                
+                    <!-- Email input -->
                     <div class="form-group">
                         <input type="email" id="email" name="email" required>
                         <label for="email">Email</label>
                     </div>
+                
+                    <!-- Message textarea -->
                     <div class="form-group">
                         <textarea id="message" name="message" rows="5" required></textarea>
                         <label for="message">Message</label>
                     </div>
+                
+                    <!-- Hidden settings for Formsubmit -->
+                    <!-- Disable CAPTCHA -->
+                    <input type="hidden" name="_captcha" value="false">
+                
+                    <!-- Set autoresponse message -->
+                    <input type="hidden" name="_autoresponse" value="Thanks for contacting me! I’ll get back to you as soon as possible.">
+                
+                    <!-- Set redirection page after submit -->
+                    <input type="hidden" name="_next" value="https://bhichem.vercel.app/thankyou.html">
+                
+                    <!-- Use table format in email -->
+                    <input type="hidden" name="_template" value="table">
+                
+                    <!-- Honeypot field for anti-spam (hidden to users) -->
+                    <input type="text" name="_honey" style="display:none">
+                
+                    <!-- Actual send button -->
                     <button type="submit" class="submit-button">Send Message</button>
                 </form>
                 <div class="contact-info">

@@ -74,30 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
             bar.style.width = level;
         });
     }
-    
-    // Form submission
-    const contactForm = document.querySelector('.contact-form');
-    
-    if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form values
-            const name = this.querySelector('#name').value;
-            const email = this.querySelector('#email').value;
-            const message = this.querySelector('#message').value;
-            
-            // Here you would typically send the form data to a server
-            console.log('Form submitted:', { name, email, message });
-            
-            // Show success message
-            alert('Thank you for your message! I will get back to you soon.');
-            
-            // Reset form
-            this.reset();
-        });
-    }
-    
+
     // Portfolio Filter
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
