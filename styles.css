@@ -46,6 +46,21 @@ nav {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--highlight);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.logo:hover {
+    color: var(--silver);
+}
+
+.logo-image {
+    width: 100px;
+    height: 100px;
+}
+
+.logo:hover {
+    color: var(--silver);
 }
 
 .nav-links {
@@ -256,6 +271,17 @@ section {
 .skill-bar {
     margin-bottom: 1.5rem;
 }
+
+.skills-container a {
+    color: var(--silver);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.skills-container a:hover {
+    color: var(--highlight);
+}
+
 
 .skill-name {
     margin-bottom: 0.5rem;
@@ -875,3 +901,4 @@ section {
     font-style: italic;
     margin-bottom: 2rem;
 }
+
