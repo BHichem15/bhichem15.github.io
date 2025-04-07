@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>B-Hichem</title>
     <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- RTL CSS for Arabic -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" id="rtl-stylesheet" disabled>
 </head>
 <body>
     <div class="cursor"></div>
@@ -15,12 +21,48 @@
         <nav>
             <div class="logo"><img src="images/Logo.png" alt="CHB" class="logo-image"></div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" data-i18n="home">Home</a></li>
+                <li><a href="#about" data-i18n="about">About</a></li>
+                <li><a href="#skills" data-i18n="skills">Skills</a></li>
+                <li><a href="#portfolio" data-i18n="portfolio">Portfolio</a></li>
+                <li><a href="#contact" data-i18n="contact">Contact</a></li>
             </ul>
+            <div class="custom-language-switcher">
+                <div class="selected-option">
+                    <img src="images/GB.png" class="flag" alt="English">
+                    <span class="language">English</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <ul class="options">
+                    <li data-value="en">
+                        <img src="images/GB.png" class="flag" alt="English">
+                        <span class="language">English</span>
+                    </li>
+                    <li data-value="es">
+                        <img src="images/ES.png" class="flag" alt="Español">
+                        <span class="language">Español</span>
+                    </li>
+                    <li data-value="de">
+                        <img src="images/DE.png" class="flag" alt="Deutsch">
+                        <span class="language">Deutsch</span>
+                    </li>
+                    <li data-value="fr">
+                        <img src="images/FR.png" class="flag" alt="Français">
+                        <span class="language">Français</span>
+                    </li>
+                    <li data-value="ar">
+                        <img src="images/AR.png" class="flag" alt="اَلْعَرَبِيَّةُ">
+                        <span class="language">اَلْعَرَبِيَّةُ</span>
+                    </li>
+                </ul>
+                <select name="language" id="language" class="hidden-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="ar">اَلْعَرَبِيَّةُ</option>
+                </select>
+            </div>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -32,10 +74,10 @@
     <main>
         <section id="home" class="hero">
             <div class="hero-content">
-                <h1 class="hero-title">Hi, I'm <span class="highlight">Bourenane Chaabane</span></h1>
-                <h2 class="hero-subtitle">Software Developer & Content Creator</h2>
-                <p class="hero-text">Passionate About High-Performance Applications and Technology</p>
-                <a href="#contact" class="cta-button">Get in Touch</a>
+                <h1 class="hero-title" data-i18n="[html]heroTitle">Hi, I'm <span class="highlight">Bourenane Chaabane</span></h1>
+                <h2 class="hero-subtitle" data-i18n="heroSubtitle">Software Developer & Content Creator</h2>
+                <p class="hero-text" data-i18n="heroText">Passionate About High-Performance Applications and Technology</p>
+                <a href="#contact" class="cta-button" data-i18n="ctaButton">Get in Touch</a>
             </div>
             <div class="hero-image">
                 <img src="images/1st photo.jpg" alt="My picture">
@@ -43,15 +85,15 @@
         </section>
 
         <section id="about" class="about">
-            <h2 class="section-title">About <span class="highlight">Me</span></h2>
+            <h2 class="section-title" data-i18n="[html]aboutTitle">About <span class="highlight">Me</span></h2>
             <div class="about-content">
                 <div class="about-image">
                     <img src="images/2nd photo.jpg" alt="My picture">
                 </div>
                 <div class="about-text">
-                    <p>I'm a passionate Algerian Software developer with over a year of experience creating functional applications.</p>
-                    <p>I have a second hobby which is content creating on instagram and youtube, i publish videos and reels about Tech and programming which are my passionate subjects.</p>
-                    <p>When I'm not coding or creating content, I used to practice sports(kickboxing or gym), Reading, and Learning new skills.</p>
+                    <p data-i18n="aboutText1">I'm a passionate Algerian Software developer with over a year of experience creating functional applications.</p>
+                    <p data-i18n="aboutText2">I have a second hobby which is content creating on instagram and youtube, i publish videos and reels about Tech and programming which are my passionate subjects.</p>
+                    <p data-i18n="aboutText3">When I'm not coding or creating content, I used to practice sports(kickboxing or gym), Reading, and Learning new skills.</p>
                     <div class="social-links">
                         <a href="https://github.com/BHichem15/"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/chbsoftdev/"><i class="fab fa-linkedin"></i></a>
@@ -65,10 +107,10 @@
         </section>
 
         <section id="skills" class="skills">
-            <h2 class="section-title">My <span class="highlight">Skills</span></h2>
+            <h2 class="section-title" data-i18n="[html]skillsTitle">My <span class="highlight">Skills</span></h2>
             <div class="skills-container">
                 <div class="skill-category">
-                    <h3>Development</h3>
+                    <h3 data-i18n="development">Development</h3>
                     <div class="skill-bar">
                         <div class="skill-name"><a href="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</a></div>
                     </div>
@@ -82,14 +124,14 @@
                         <div class="skill-name"><a href="https://en.wikipedia.org/wiki/SQL">SQL</a></div>
                     </div>
                     <div class="skill-bar">
-                        <div class="skill-name"><a href="https://en.wikipedia.org/wiki/HTML"">HTML</a> / <a href="https://en.wikipedia.org/wiki/CSS">CSS</a></div>
+                        <div class="skill-name"><a href="https://en.wikipedia.org/wiki/HTML">HTML</a> / <a href="https://en.wikipedia.org/wiki/CSS">CSS</a></div>
                     </div>
                     <div class="skill-bar">
                         <div class="skill-name"><a href="https://en.wikipedia.org/wiki/FastAPI">Fast API</a></div>
                     </div>
                 </div>
                 <div class="skill-category">
-                    <h3>Design and Video Editing</h3>
+                    <h3 data-i18n="designVideo">Design and Video Editing</h3>
                     <div class="skill-bar">
                         <div class="skill-name"><a href="https://en.wikipedia.org/wiki/User_interface">UI</a> / <a href="https://en.wikipedia.org/wiki/User_experience">UX</a></div>
                     </div>
@@ -105,19 +147,19 @@
                     <div class="skill-bar">
                         <div class="skill-name"><a href="https://en.wikipedia.org/wiki/Adobe_Premiere_Pro">Adobe Premiere Pro</a></div>
                     </div>
+                </div>
             </div>
         </section>
 
         <section id="portfolio" class="portfolio">
-            <h2 class="section-title">My <span class="highlight">Portfolio</span></h2>
+            <h2 class="section-title" data-i18n="[html]portfolioTitle">My <span class="highlight">Portfolio</span></h2>
             <div class="portfolio-filter">
-                <button class="filter-btn active" data-filter="all">All</button>
-                <button class="filter-btn" data-filter="disktop">Disktop Apps</button>
-                <button class="filter-btn" data-filter="phone">phone Apps</button>
-                <button class="filter-btn" data-filter="web">Web Apps</button>
+                <button class="filter-btn active" data-filter="all" data-i18n="filterAll">All</button>
+                <button class="filter-btn" data-filter="disktop" data-i18n="filterDesktop">Desktop Apps</button>
+                <button class="filter-btn" data-filter="phone" data-i18n="filterPhone">Mobile Apps</button>
+                <button class="filter-btn" data-filter="web" data-i18n="filterWeb">Web Apps</button>
             </div>
             <div class="portfolio-container">
-                <!-- Portfolio Item 1 -->
                 <div class="portfolio-item" data-category="disktop">
                     <div class="portfolio-img">
                         <img src="images/HardMonX.png" alt="HardMonX">
@@ -137,127 +179,67 @@
                         </div>
                     </div>
                 </div>
-                
-                <!-- Portfolio Item 2 
-                    <div class="portfolio-item" data-category="design">
-                    <div class="portfolio-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 2">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>UI/UX Dashboard</h3>
-                        <p>Modern admin dashboard design with interactive elements.</p>
-                        <div class="portfolio-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                            <a href="#"><i class="fab fa-behance"></i> Behance</a>
-                        </div>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">Figma</span>
-                            <span class="portfolio-tag">UI/UX</span>
-                            <span class="portfolio-tag">Prototype</span>
-                        </div>
-                    </div>
-                </div>
-                
-                 Portfolio Item 3 
-                <div class="portfolio-item" data-category="app">
-                    <div class="portfolio-img">
-                        <img src="https://via.placeholder.com/600x400" alt="Project 3">
-                    </div>
-                    <div class="portfolio-info">
-                        <h3>Fitness Tracker App</h3>
-                        <p>Mobile application for tracking workouts and nutrition.</p>
-                        <div class="portfolio-links">
-                            <a href="#"><i class="fas fa-external-link-alt"></i> App Store</a>
-                            <a href="#"><i class="fab fa-github"></i> Code</a>
-                        </div>
-                        <div class="portfolio-tags">
-                            <span class="portfolio-tag">React Native</span>
-                            <span class="portfolio-tag">Firebase</span>
-                            <span class="portfolio-tag">iOS</span>
-                        </div>
-                    </div>
-                </div>-->
-                
-                <!-- Add more portfolio items as needed -->
             </div>
-        </section>
-        
-        <!-- Portfolio Modal -->
-        <div class="portfolio-modal">
-            <div class="modal-content">
-                <span class="modal-close">&times;</span>
-                <div class="modal-img">
-                    <img src="" alt="Project Image">
-                </div>
-                <div class="modal-info">
-                    <h2>Project Title</h2>
-                    <p>Project description goes here. This would be a more detailed explanation of the project, the technologies used, challenges faced, and solutions implemented.</p>
-                    <div class="modal-links">
-                        <a href="#"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="#"><i class="fab fa-github"></i> View Code</a>
+            <div class="portfolio-modal">
+                <div class="modal-content">
+                    <span class="modal-close">&times;</span>
+                    <div class="modal-img">
+                        <img src="images/HardMonX.png" alt="HardMonX">
                     </div>
-                    <div class="modal-tags">
-                        <span class="portfolio-tag">React</span>
-                        <span class="portfolio-tag">Node.js</span>
-                        <span class="portfolio-tag">MongoDB</span>
-                    </div>
-                    <div class="modal-details">
-                        <h3>Project Details</h3>
-                        <ul>
-                            <li>The backend is built using Python, leveraging various system-monitoring libraries. A JSON file acts as a mini-database to store performance history.</li>
-                            <li>The frontend is designed using Tkinter to provide a simple and interactive graphical user interface.</li>
-                        </ul>
+                    <div class="modal-info">
+                        <h2>Project Title</h2>
+                        <p>Project description</p>
+                        <div class="modal-links">
+                            <a href="https://www.youtube.com/watch?v=9TUZCqUVokM"><i class="fas fa-external-link-alt"></i> Live Demo</a>
+                            <a href="https://github.com/BHichem15/HardMonX"><i class="fab fa-github"></i> View Code</a>
+                        </div>
+                        <div class="modal-tags"></div>
+                        <div class="modal-details">
+                            <h3>Project Details</h3>
+                            <ul>
+                                <li>Detail 1</li>
+                                <li>Detail 2</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
-                        
+        </section>
 
         <section id="contact" class="contact">
-            <h2 class="section-title">Get In <span class="highlight">Touch</span></h2>
+            <h2 class="section-title" data-i18n="[html]contactTitle">Get In <span class="highlight">Touch</span></h2>
             <div class="contact-container">
                 <form class="contact-form" action="https://formsubmit.co/bhichemservices@gmail.com" method="POST">
-                    <!-- Name input -->
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
-                        <label for="name">Name</label>
+                        <label for="name" data-i18n="namePlaceholder">Name</label>
                     </div>
                 
-                    <!-- Email input -->
                     <div class="form-group">
                         <input type="email" id="email" name="email" required>
-                        <label for="email">Email</label>
+                        <label for="email" data-i18n="emailPlaceholder">Email</label>
                     </div>
                 
-                    <!-- Message textarea -->
                     <div class="form-group">
                         <textarea id="message" name="message" rows="5" required></textarea>
-                        <label for="message">Message</label>
+                        <label for="message" data-i18n="messagePlaceholder">Message</label>
                     </div>
                 
-                    <!-- Disable CAPTCHA -->
                     <input type="hidden" name="_captcha" value="false">
-                
-                    <!-- Set redirection page after submit -->
                     <input type="hidden" name="_next" value="https://bhichem15.github.io/Thanks.html">
-                
-                    <!-- Use table format in email -->
                     <input type="hidden" name="_template" value="table">
-                
-                    <!-- Honeypot field for anti-spam (hidden to users) -->
                     <input type="text" name="_honey" style="display:none">
                 
-                    <!-- Actual send button -->
-                    <button type="submit" class="submit-button">Send Message</button>
+                    <button type="submit" class="submit-button" data-i18n="sendButton">Send Message</button>
                 </form>
                 <div class="contact-info">
-                    <h3>Contact Information</h3>
+                    <h3 data-i18n="contactInfo">Contact Information</h3>
                     <p><i class="fas fa-envelope"></i> bhichemservices@gmail.com</p>
                     <p><i class="fas fa-phone"></i> +213 542 95 57 79</p>
                     <p><i class="fas fa-map-marker-alt"></i> Algiers, Algeria</p>
-                    <p class="privacy-notice">By submitting this form, you agree to my <a href="privacy.html">Privacy Policy</a>.</p>
-                    <p class="privacy-notice">By submitting this form, you agree to my <a href="terms.html">Terms of Service</a></p>
+                    <p class="privacy-notice"><span data-i18n="privacyNotice1">By submitting this form, you agree to my </span>: </p>
+                    <p class="privacy-notice"></p><a href="privacy.html" data-i18n="privacyNotice2">Privacy Policy</a></p>
+                    <p class="privacy-notice"><a href="terms.html" data-i18n="privacyNotice3">Terms of Service</a></p>
                 </div>
             </div>
         </section>
@@ -265,15 +247,103 @@
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Bourenane Chaabane. All rights reserved.</p>
+            <p data-i18n="copyright">&copy; 2025 Bourenane Chaabane. All rights reserved.</p>
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html" data-i18n="privacyNotice2">Privacy Policy</a>
+                <a href="terms.html" data-i18n="privacyNotice3">Terms of Service</a>
             </div>
         </div>
     </footer>
 
+    <!-- i18next libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+    
+    <!-- Other scripts -->
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+    
+    <script>
+        // i18next configuration
+        i18next
+            .use(i18nextHttpBackend)
+            .use(i18nextBrowserLanguageDetector)
+            .init({
+                fallbackLng: 'en',
+                debug: false,
+                ns: ['translation'],
+                defaultNS: 'translation',
+                backend: {
+                    loadPath: 'locales/{{lng}}.json'
+                },
+                detection: {
+                    order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+                    caches: ['cookie']
+                },
+                interpolation: {
+                    escapeValue: false,
+                    format: function(value, format, lng) {
+                        if (format === 'highlight') {
+                            return `<span class="highlight">${value}</span>`;
+                        }
+                        return value;
+                    }
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $);
+                
+                // Update content with highlights
+                updateContent();
+                
+                // Handle RTL for Arabic
+                if (i18next.language === 'ar') {
+                    document.documentElement.dir = 'rtl';
+                    document.getElementById('rtl-stylesheet').disabled = false;
+                }
+            });
+        
+        function updateContent() {
+            // Localize normal elements
+            $('[data-i18n]:not([data-i18n^="[html"])').localize();
+            
+            // Localize HTML elements with highlights
+            $('[data-i18n^="[html]"]').each(function() {
+                const key = $(this).data('i18n').replace('[html]', '');
+                const translation = i18next.t(key);
+                $(this).html(translation);
+            });
+        }
+        
+        // Language switcher functionality
+        $(document).ready(function() {
+            // Set initial language
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang) {
+                $('#language').val(savedLang);
+            }
+            
+            // Handle language change
+            $('#language').change(function() {
+                const newLang = $(this).val();
+                localStorage.setItem('selectedLanguage', newLang);
+                
+                i18next.changeLanguage(newLang, function(err, t) {
+                    updateContent();
+                    
+                    // Handle RTL for Arabic
+                    if (newLang === 'ar') {
+                        document.documentElement.dir = 'rtl';
+                        document.getElementById('rtl-stylesheet').disabled = false;
+                    } else {
+                        document.documentElement.dir = 'ltr';
+                        document.getElementById('rtl-stylesheet').disabled = true;
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>

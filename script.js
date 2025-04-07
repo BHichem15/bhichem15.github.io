@@ -65,17 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Animate skill bars on scroll
-    const skillBars = document.querySelectorAll('.skill-level');
-    
-    function animateSkillBars() {
-        skillBars.forEach(bar => {
-            const level = bar.getAttribute('data-level');
-            bar.style.width = level;
-        });
-    }
-
-    // Portfolio Filter
+    // Portfolio Filter Functionality
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioItems = document.querySelectorAll('.portfolio-item');
 
@@ -86,16 +76,18 @@ document.addEventListener('DOMContentLoaded', function() {
             // Add active class to clicked button
             button.classList.add('active');
             
-            const filterValue = button.getAttribute('data-filter');
+            const filterValue = button.dataset.filter;
             
             portfolioItems.forEach(item => {
-                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                if (filterValue === 'all' || item.dataset.category === filterValue) {
                     item.style.display = 'block';
                     setTimeout(() => {
                         item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
                     }, 50);
                 } else {
                     item.style.opacity = '0';
+                    item.style.transform = 'translateY(20px)';
                     setTimeout(() => {
                         item.style.display = 'none';
                     }, 300);
@@ -104,8 +96,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Portfolio Modal
-    const portfolioItemsModal = document.querySelectorAll('.portfolio-item');
+    // Portfolio Modal Functionality
     const modal = document.querySelector('.portfolio-modal');
     const modalImg = modal.querySelector('.modal-img img');
     const modalTitle = modal.querySelector('.modal-info h2');
@@ -115,46 +106,62 @@ document.addEventListener('DOMContentLoaded', function() {
     const modalDetails = modal.querySelector('.modal-details ul');
     const modalClose = modal.querySelector('.modal-close');
 
-    portfolioItemsModal.forEach(item => {
+    // Add click event to each portfolio item
+    portfolioItems.forEach(item => {
         item.addEventListener('click', (e) => {
             // Don't open modal if clicking on links inside portfolio item
-            if (e.target.tagName === 'A' || e.target.parentElement.tagName === 'A') {
+            if (e.target.closest('a') || e.target.closest('button')) {
                 return;
             }
             
-            const imgSrc = item.querySelector('.portfolio-img img').getAttribute('src');
-            const title = item.querySelector('.portfolio-info h3').textContent;
-            const desc = item.querySelector('.portfolio-info p').textContent;
-            const links = item.querySelectorAll('.portfolio-links a');
+            // Get all necessary data from the portfolio item
+            const imgSrc = item.querySelector('.portfolio-img img')?.src;
+            const title = item.querySelector('.portfolio-info h3')?.textContent;
+            const desc = item.querySelector('.portfolio-info p')?.textContent;
+            const liveLink = item.querySelector('.portfolio-links a[href*="youtube"], .portfolio-links a[href*="demo"]')?.href;
+            const codeLink = item.querySelector('.portfolio-links a[href*="github"]')?.href;
             const tags = item.querySelectorAll('.portfolio-tag');
             
             // Set modal content
-            modalImg.setAttribute('src', imgSrc);
-            modalTitle.textContent = title;
-            modalDesc.textContent = desc;
+            if (imgSrc) modalImg.src = imgSrc;
+            if (title) modalTitle.textContent = title;
+            if (desc) modalDesc.textContent = desc;
             
             // Set modal links
-            links.forEach((link, index) => {
-                if (modalLinks[index]) {
-                    modalLinks[index].setAttribute('href', link.getAttribute('href'));
-                    modalLinks[index].innerHTML = link.innerHTML;
-                }
-            });
+            if (liveLink && modalLinks[0]) {
+                modalLinks[0].href = liveLink;
+                modalLinks[0].innerHTML = '<i class="fas fa-external-link-alt"></i> Live Demo';
+            }
             
-            // Set modal tags
+            if (codeLink && modalLinks[1]) {
+                modalLinks[1].href = codeLink;
+                modalLinks[1].innerHTML = '<i class="fab fa-github"></i> View Code';
+            }
+            
+            // Clear and rebuild tags
             modalTags.innerHTML = '';
             tags.forEach(tag => {
                 const tagClone = tag.cloneNode(true);
                 modalTags.appendChild(tagClone);
             });
             
-            // Set modal details (customize this per project)
-            modalDetails.innerHTML = `
-                <li>Real-time system performance monitoring</li>
-                <li>Simple and user-friendly graphical interface</li>
-                <li>Works on Windows, Linux, and MacOS</li>
-                <li>Lightweight and resource-efficient</li>
-            `;
+            // Set project details - customize this per project
+            const projectDetails = {
+                'HardMonX': [
+                    'Real-time system performance monitoring',
+                    'Simple and user-friendly graphical interface',
+                    'Works on Windows, Linux, and MacOS',
+                    'Lightweight and resource-efficient'
+                ],
+                // Add details for other projects here
+            };
+            
+            modalDetails.innerHTML = (projectDetails[title] || [
+                'High-quality project implementation',
+                'Responsive design',
+                'Optimized performance',
+                'Clean and maintainable code'
+            ]).map(detail => `<li>${detail}</li>`).join('');
             
             // Show modal
             modal.classList.add('active');
@@ -162,13 +169,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Close modal
+    // Close modal handlers
     modalClose.addEventListener('click', () => {
         modal.classList.remove('active');
         document.body.style.overflow = 'auto';
     });
 
-    // Close modal when clicking outside content
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
             modal.classList.remove('active');
@@ -176,7 +182,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // Scroll reveal animation
+    // Initialize ScrollReveal animations
     const scrollReveal = ScrollReveal({
         origin: 'bottom',
         distance: '60px',
@@ -190,4 +196,97 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollReveal.reveal('.skill-category', { interval: 200 });
     scrollReveal.reveal('.portfolio-item', { interval: 200 });
     scrollReveal.reveal('.contact-form, .contact-info', { origin: 'right', interval: 200 });
+
+    // Animate skill bars on scroll
+    const skillBars = document.querySelectorAll('.skill-level');
+    
+    function animateSkillBars() {
+        skillBars.forEach(bar => {
+            const level = bar.getAttribute('data-level');
+            bar.style.width = level;
+        });
+    }
+
+    // Initialize skill bars animation
+    animateSkillBars();
+});
+document.addEventListener('DOMContentLoaded', function() {
+    const switcher = document.querySelector('.custom-language-switcher');
+    if (!switcher) return;
+
+    const selectedOption = switcher.querySelector('.selected-option');
+    const options = switcher.querySelector('.options');
+    const hiddenSelect = switcher.querySelector('.hidden-select');
+    const allOptions = options.querySelectorAll('li');
+    const arrow = selectedOption.querySelector('.arrow');
+
+    // Set initial selected option
+    function setInitialOption() {
+        const initialValue = hiddenSelect.value;
+        const initialOption = options.querySelector(`[data-value="${initialValue}"]`);
+        if (initialOption) {
+            selectedOption.innerHTML = initialOption.innerHTML + '<span class="arrow">▼</span>';
+        }
+    }
+    setInitialOption();
+
+    // Toggle dropdown
+    selectedOption.addEventListener('click', function(e) {
+        e.stopPropagation();
+        switcher.classList.toggle('active');
+    });
+
+    // Handle option selection
+    allOptions.forEach(option => {
+        option.addEventListener('click', function() {
+            const value = this.getAttribute('data-value');
+            hiddenSelect.value = value;
+            
+            // Update selected display
+            selectedOption.innerHTML = this.innerHTML + '<span class="arrow">▼</span>';
+            
+            // Trigger change event
+            hiddenSelect.dispatchEvent(new Event('change'));
+            
+            // Close dropdown
+            switcher.classList.remove('active');
+            
+            // Add hover effect
+            switcher.classList.add('clicked');
+            setTimeout(() => {
+                switcher.classList.remove('clicked');
+            }, 300);
+        });
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function() {
+        switcher.classList.remove('active');
+    });
+
+    // Keyboard accessibility
+    switcher.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            switcher.classList.toggle('active');
+        }
+    });
+
+    // Add hover effects
+    switcher.addEventListener('mouseenter', function() {
+        this.style.boxShadow = '0 6px 10px rgba(0, 188, 212, 0.4)';
+        this.style.transform = 'translateY(-2px)';
+    });
+
+    switcher.addEventListener('mouseleave', function() {
+        if (!this.classList.contains('active')) {
+            this.style.boxShadow = '0 4px 6px rgba(0, 188, 212, 0.3)';
+            this.style.transform = 'translateY(0)';
+        }
+    });
+});
+
+// Connect with i18next if needed
+document.getElementById('language').addEventListener('change', function() {
+    i18next.changeLanguage(this.value);
 });

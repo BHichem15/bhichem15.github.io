@@ -3,21 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy | B-Hichem</title>
+    <title data-i18n="privacyTitle">Privacy Policy | B-Hichem</title>
     <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- RTL CSS for Arabic -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" id="rtl-stylesheet" disabled>
 </head>
 <body>
+    <div class="cursor"></div>
+    
     <header>
         <nav>
             <div class="logo"><img src="images/Logo.png" alt="CHB" class="logo-image"></div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#portfolio">Portfolio</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html" data-i18n="home">Home</a></li>
+                <li><a href="index.html#about" data-i18n="about">About</a></li>
+                <li><a href="index.html#skills" data-i18n="skills">Skills</a></li>
+                <li><a href="index.html#portfolio" data-i18n="portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact" data-i18n="contact">Contact</a></li>
             </ul>
+            <div class="custom-language-switcher">
+                <div class="selected-option">
+                    <span class="flag">🇬🇧</span>
+                    <span class="language">English</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <ul class="options">
+                    <li data-value="en">
+                        <span class="flag">🇬🇧</span>
+                        <span class="language">English</span>
+                    </li>
+                    <li data-value="es">
+                        <span class="flag">🇪🇸</span>
+                        <span class="language">Español</span>
+                    </li>
+                    <li data-value="de">
+                        <span class="flag">🇩🇪</span>
+                        <span class="language">Deutsch</span>
+                    </li>
+                    <li data-value="fr">
+                        <span class="flag">🇫🇷</span>
+                        <span class="language">Français</span>
+                    </li>
+                    <li data-value="ar">
+                        <span class="flag">🇸🇦</span>
+                        <span class="language">اَلْعَرَبِيَّةُ</span>
+                    </li>
+                </ul>
+                <select name="language" id="language" class="hidden-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="ar">اَلْعَرَبِيَّةُ</option>
+                </select>
+            </div>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -28,59 +73,168 @@
 
     <main class="privacy-policy">
         <section>
-            <h1>Privacy Policy</h1>
-            <p>Last Updated: Sunday 06 April 2025</p>
+            <h1 data-i18n="privacyHeading">Privacy Policy</h1>
+            <p data-i18n="[html]lastUpdated">Last Updated: <span id="current-date">Sunday 06 April 2025</span></p>
             
-            <h2>1. Information Collection</h2>
-            <p>I collect minimal personal information through my contact form, including:</p>
+            <h2 data-i18n="privacySection1">1. Information Collection</h2>
+            <p data-i18n="privacyContent1">I collect minimal personal information through my contact form, including:</p>
             <ul>
-                <li>Name</li>
-                <li>Email address</li>
-                <li>Message content</li>
+                <li data-i18n="privacyListItem1">Name</li>
+                <li data-i18n="privacyListItem2">Email address</li>
+                <li data-i18n="privacyListItem3">Message content</li>
             </ul>
 
-            <h2>2. Use of Information</h2>
-            <p>The information you provide is used solely to respond to your inquiries and communicate with you.</p>
+            <h2 data-i18n="privacySection2">2. Use of Information</h2>
+            <p data-i18n="privacyContent2">The information you provide is used solely to respond to your inquiries and communicate with you.</p>
 
-            <h2>3. Data Storage</h2>
-            <p>Your information is stored securely and kept only as long as necessary to fulfill your request.</p>
+            <h2 data-i18n="privacySection3">3. Data Storage</h2>
+            <p data-i18n="privacyContent3">Your information is stored securely and kept only as long as necessary to fulfill your request.</p>
 
-            <h2>4. Third-Party Services</h2>
-            <p>This website uses:</p>
+            <h2 data-i18n="privacySection4">4. Third-Party Services</h2>
+            <p data-i18n="privacyContent4">This website uses:</p>
             <ul>
-                <li>Google Analytics for traffic analysis (anonymous data)</li>
-                <li>Font Awesome for icons</li>
+                <li data-i18n="privacyListItem4">Google Analytics for traffic analysis (anonymous data)</li>
+                <li data-i18n="privacyListItem5">Font Awesome for icons</li>
             </ul>
 
-            <h2>5. Cookies</h2>
-            <p>This site uses minimal cookies for functionality and analytics. You can disable cookies in your browser settings.</p>
+            <h2 data-i18n="privacySection5">5. Cookies</h2>
+            <p data-i18n="privacyContent5">This site uses minimal cookies for functionality and analytics. You can disable cookies in your browser settings.</p>
 
-            <h2>6. Your Rights</h2>
-            <p>You have the right to:</p>
+            <h2 data-i18n="privacySection6">6. Your Rights</h2>
+            <p data-i18n="privacyContent6">You have the right to:</p>
             <ul>
-                <li>Request access to your data</li>
-                <li>Request correction or deletion</li>
-                <li>Opt-out of communications</li>
+                <li data-i18n="privacyListItem6">Request access to your data</li>
+                <li data-i18n="privacyListItem7">Request correction or deletion</li>
+                <li data-i18n="privacyListItem8">Opt-out of communications</li>
             </ul>
 
-            <h2>7. Changes to This Policy</h2>
-            <p>I may update this policy occasionally. The latest version will always be posted here.</p>
+            <h2 data-i18n="privacySection7">7. Changes to This Policy</h2>
+            <p data-i18n="privacyContent7">I may update this policy occasionally. The latest version will always be posted here.</p>
 
-            <h2>8. Contact Me</h2>
-            <p>For privacy-related questions, please use the <a href="index.html#contact">contact form</a>.</p>
+            <h2 data-i18n="contact-me">8. Contact Me</h2>
+            <p data-i18n="[html]privacyContent8">For privacy-related questions, please use the <a href="index.html#contact">contact form</a>.</p>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Bourenane Chaabane. All rights reserved.</p>
+            <p data-i18n="[html]copyright">&copy; <span id="current-year">2025</span> Bourenane Chaabane. All rights reserved.</p>
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html" data-i18n="privacyNotice2">Privacy Policy</a>
+                <a href="terms.html" data-i18n="privacyNotice3">Terms of Service</a>
             </div>
         </div>
     </footer>
 
+    <!-- i18next libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+    
+    <!-- Other scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+    
+    <script>
+        // i18next configuration
+        i18next
+            .use(i18nextHttpBackend)
+            .use(i18nextBrowserLanguageDetector)
+            .init({
+                fallbackLng: 'en',
+                debug: false,
+                ns: ['translation'],
+                defaultNS: 'translation',
+                backend: {
+                    loadPath: 'locales/{{lng}}.json'
+                },
+                detection: {
+                    order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+                    caches: ['cookie']
+                },
+                interpolation: {
+                    escapeValue: false
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $);
+                
+                // Localize the page
+                $('body').localize();
+                
+                // Handle RTL for Arabic
+                if (i18next.language === 'ar') {
+                    document.documentElement.dir = 'rtl';
+                    document.getElementById('rtl-stylesheet').disabled = false;
+                }
+                
+                // Update date format based on language
+                updateDate();
+            });
+        
+        // Language switcher functionality
+        $(document).ready(function() {
+            // Set initial language from localStorage or browser preference
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang) {
+                $('#language').val(savedLang);
+            }
+            
+            // Handle language change
+            $('#language').change(function() {
+                const newLang = $(this).val();
+                localStorage.setItem('selectedLanguage', newLang);
+                
+                i18next.changeLanguage(newLang, function(err, t) {
+                    $('body').localize();
+                    
+                    // Handle RTL for Arabic
+                    if (newLang === 'ar') {
+                        document.documentElement.dir = 'rtl';
+                        document.getElementById('rtl-stylesheet').disabled = false;
+                    } else {
+                        document.documentElement.dir = 'ltr';
+                        document.getElementById('rtl-stylesheet').disabled = true;
+                    }
+                    
+                    // Update date format
+                    updateDate();
+                });
+            });
+            
+            // Automatically update year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+        });
+        
+        function updateDate() {
+            const dateOptions = {
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                weekday: 'long'
+            };
+            
+            // Adjust date format based on language
+            let formattedDate;
+            switch(i18next.language) {
+                case 'ar':
+                    formattedDate = new Date().toLocaleDateString('ar-EG', dateOptions);
+                    break;
+                case 'es':
+                    formattedDate = new Date().toLocaleDateString('es-ES', dateOptions);
+                    break;
+                case 'de':
+                    formattedDate = new Date().toLocaleDateString('de-DE', dateOptions);
+                    break;
+                case 'fr':
+                    formattedDate = new Date().toLocaleDateString('fr-FR', dateOptions);
+                    break;
+                default:
+                    formattedDate = new Date().toLocaleDateString('en-US', dateOptions);
+            }
+            
+            document.getElementById('current-date').textContent = formattedDate;
+        }
+    </script>
 </body>
 </html>

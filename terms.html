@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service | B-Hichem</title>
+    <title data-i18n="termsTitle">Terms of Service | B-Hichem</title>
     <link rel="icon" type="image/png" href="images/Logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- RTL CSS for Arabic -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" id="rtl-stylesheet" disabled>
 </head>
 <body>
     <div class="cursor"></div>
@@ -15,12 +21,48 @@
         <nav>
             <div class="logo"><img src="images/Logo.png" alt="CHB" class="logo-image"></div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="index.html#about">About</a></li>
-                <li><a href="index.html#skills">Skills</a></li>
-                <li><a href="index.html#portfolio">Portfolio</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="index.html" data-i18n="home">Home</a></li>
+                <li><a href="index.html#about" data-i18n="about">About</a></li>
+                <li><a href="index.html#skills" data-i18n="skills">Skills</a></li>
+                <li><a href="index.html#portfolio" data-i18n="portfolio">Portfolio</a></li>
+                <li><a href="index.html#contact" data-i18n="contact">Contact</a></li>
             </ul>
+            <div class="custom-language-switcher">
+                <div class="selected-option">
+                    <span class="flag">🇬🇧</span>
+                    <span class="language">English</span>
+                    <span class="arrow">▼</span>
+                </div>
+                <ul class="options">
+                    <li data-value="en">
+                        <span class="flag">🇬🇧</span>
+                        <span class="language">English</span>
+                    </li>
+                    <li data-value="es">
+                        <span class="flag">🇪🇸</span>
+                        <span class="language">Español</span>
+                    </li>
+                    <li data-value="de">
+                        <span class="flag">🇩🇪</span>
+                        <span class="language">Deutsch</span>
+                    </li>
+                    <li data-value="fr">
+                        <span class="flag">🇫🇷</span>
+                        <span class="language">Français</span>
+                    </li>
+                    <li data-value="ar">
+                        <span class="flag">🇸🇦</span>
+                        <span class="language">اَلْعَرَبِيَّةُ</span>
+                    </li>
+                </ul>
+                <select name="language" id="language" class="hidden-select">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="de">Deutsch</option>
+                    <option value="fr">Français</option>
+                    <option value="ar">اَلْعَرَبِيَّةُ</option>
+                </select>
+            </div>
             <div class="burger">
                 <div class="line1"></div>
                 <div class="line2"></div>
@@ -31,65 +73,165 @@
 
     <main class="terms-service">
         <section>
-            <h1>Terms of Service</h1>
-            <p>Last Updated: Sunday 06 April 2025</p>
+            <h1 data-i18n="termsHeading">Terms of Service</h1>
+            <p data-i18n="[html]lastUpdated">Last Updated: <span id="current-date">Sunday 06 April 2025</span></p>
             
-            <h2>1. Acceptance of Terms</h2>
-            <p>By accessing and using this website, you accept and agree to be bound by these Terms of Service.</p>
+            <h2 data-i18n="termsSection1">1. Acceptance of Terms</h2>
+            <p data-i18n="termsContent1">By accessing and using this website, you accept and agree to be bound by these Terms of Service.</p>
             
-            <h2>2. Use License</h2>
-            <p>Permission is granted to temporarily view the materials on this personal website for personal, non-commercial use only.</p>
-            <p>This is the grant of a license, not a transfer of title, and under this license you may not:</p>
+            <h2 data-i18n="termsSection2">2. Use License</h2>
+            <p data-i18n="termsContent2">Permission is granted to temporarily view the materials on this personal website for personal, non-commercial use only.</p>
+            <p data-i18n="termsContent3">This is the grant of a license, not a transfer of title, and under this license you may not:</p>
             <ul>
-                <li>Modify or copy the materials</li>
-                <li>Use the materials for any commercial purpose</li>
-                <li>Attempt to decompile or reverse engineer any software</li>
-                <li>Remove any copyright or other proprietary notations</li>
-                <li>Transfer the materials to another person or "mirror" the materials on any other server</li>
+                <li data-i18n="termsListItem1">Modify or copy the materials</li>
+                <li data-i18n="termsListItem2">Use the materials for any commercial purpose</li>
+                <li data-i18n="termsListItem3">Attempt to decompile or reverse engineer any software</li>
+                <li data-i18n="termsListItem4">Remove any copyright or other proprietary notations</li>
+                <li data-i18n="termsListItem5">Transfer the materials to another person or "mirror" the materials on any other server</li>
             </ul>
             
-            <h2>3. Disclaimer</h2>
-            <p>The materials on this website are provided "as is". I make no warranties, expressed or implied, and hereby disclaim all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
+            <h2 data-i18n="termsSection3">3. Disclaimer</h2>
+            <p data-i18n="termsContent4">The materials on this website are provided "as is". I make no warranties, expressed or implied, and hereby disclaim all other warranties including, without limitation, implied warranties or conditions of merchantability, fitness for a particular purpose, or non-infringement of intellectual property or other violation of rights.</p>
             
-            <h2>4. Limitations</h2>
-            <p>In no event shall I be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website.</p>
+            <h2 data-i18n="termsSection4">4. Limitations</h2>
+            <p data-i18n="termsContent5">In no event shall I be liable for any damages (including, without limitation, damages for loss of data or profit, or due to business interruption) arising out of the use or inability to use the materials on this website.</p>
             
-            <h2>5. Accuracy of Materials</h2>
-            <p>The materials appearing on this website could include technical, typographical, or photographic errors. I do not warrant that any of the materials are accurate, complete or current.</p>
+            <h2 data-i18n="termsSection5">5. Accuracy of Materials</h2>
+            <p data-i18n="termsContent6">The materials appearing on this website could include technical, typographical, or photographic errors. I do not warrant that any of the materials are accurate, complete or current.</p>
             
-            <h2>6. Links</h2>
-            <p>I have not reviewed all of the sites linked to this website and am not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement.</p>
+            <h2 data-i18n="termsSection6">6. Links</h2>
+            <p data-i18n="termsContent7">I have not reviewed all of the sites linked to this website and am not responsible for the contents of any such linked site. The inclusion of any link does not imply endorsement.</p>
             
-            <h2>7. Modifications</h2>
-            <p>I may revise these terms of service at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Service.</p>
+            <h2 data-i18n="termsSection7">7. Modifications</h2>
+            <p data-i18n="termsContent8">I may revise these terms of service at any time without notice. By using this website you are agreeing to be bound by the then current version of these Terms of Service.</p>
             
-            <h2>8. Governing Law</h2>
-            <p>These terms and conditions are governed by and construed in accordance with the laws of [Your Country/State] and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
+            <h2 data-i18n="termsSection8">8. Governing Law</h2>
+            <p data-i18n="termsContent9">These terms and conditions are governed by and construed in accordance with the laws of Algeria and you irrevocably submit to the exclusive jurisdiction of the courts in that location.</p>
             
-            <h2>9. Contact Information</h2>
-            <p>For any questions about these Terms, please contact me via the <a href="index.html#contact">contact form</a>.</p>
+            <h2 data-i18n="contactInfo">9. Contact Information</h2>
+            <p data-i18n="[html]termsContent10">For any questions about these Terms, please contact me via the <a href="index.html#contact">contact form</a>.</p>
         </section>
     </main>
 
     <footer>
         <div class="footer-content">
-            <p>&copy; 2025 Bourenane Chaabane. All rights reserved.</p>
+            <p data-i18n="[html]copyright">&copy; <span id="current-year">2025</span> Bourenane Chaabane. All rights reserved.</p>
             <div class="footer-links">
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
+                <a href="privacy.html" data-i18n="privacyNotice2">Privacy Policy</a>
+                <a href="terms.html" data-i18n="privacyNotice3">Terms of Service</a>
             </div>
         </div>
     </footer>
 
+    <!-- i18next libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/i18next@21.6.10/i18next.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-http-backend@1.3.2/i18nextHttpBackend.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-i18next@1.2.1/jquery-i18next.min.js"></script>
+    
+    <!-- Other scripts -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="script.js"></script>
+    
     <script>
-        // Automatically update year and date
-        document.getElementById('current-year').textContent = new Date().getFullYear();
-        document.getElementById('current-date').textContent = new Date().toLocaleDateString('en-US', {
-            year: 'numeric', 
-            month: 'long', 
-            day: 'numeric'
+        // i18next configuration
+        i18next
+            .use(i18nextHttpBackend)
+            .use(i18nextBrowserLanguageDetector)
+            .init({
+                fallbackLng: 'en',
+                debug: false,
+                ns: ['translation'],
+                defaultNS: 'translation',
+                backend: {
+                    loadPath: 'locales/{{lng}}.json'
+                },
+                detection: {
+                    order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag'],
+                    caches: ['cookie']
+                },
+                interpolation: {
+                    escapeValue: false
+                }
+            }, function(err, t) {
+                jqueryI18next.init(i18next, $);
+                
+                // Localize the page
+                $('body').localize();
+                
+                // Handle RTL for Arabic
+                if (i18next.language === 'ar') {
+                    document.documentElement.dir = 'rtl';
+                    document.getElementById('rtl-stylesheet').disabled = false;
+                }
+                
+                // Update date format based on language
+                updateDate();
+            });
+        
+        // Language switcher functionality
+        $(document).ready(function() {
+            // Set initial language from localStorage or browser preference
+            const savedLang = localStorage.getItem('selectedLanguage');
+            if (savedLang) {
+                $('#language').val(savedLang);
+            }
+            
+            // Handle language change
+            $('#language').change(function() {
+                const newLang = $(this).val();
+                localStorage.setItem('selectedLanguage', newLang);
+                
+                i18next.changeLanguage(newLang, function(err, t) {
+                    $('body').localize();
+                    
+                    // Handle RTL for Arabic
+                    if (newLang === 'ar') {
+                        document.documentElement.dir = 'rtl';
+                        document.getElementById('rtl-stylesheet').disabled = false;
+                    } else {
+                        document.documentElement.dir = 'ltr';
+                        document.getElementById('rtl-stylesheet').disabled = true;
+                    }
+                    
+                    // Update date format
+                    updateDate();
+                });
+            });
+            
+            // Automatically update year
+            document.getElementById('current-year').textContent = new Date().getFullYear();
         });
+        
+        function updateDate() {
+            const dateOptions = {
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric',
+                weekday: 'long'
+            };
+            
+            // Adjust date format based on language
+            let formattedDate;
+            switch(i18next.language) {
+                case 'ar':
+                    formattedDate = new Date().toLocaleDateString('ar-EG', dateOptions);
+                    break;
+                case 'es':
+                    formattedDate = new Date().toLocaleDateString('es-ES', dateOptions);
+                    break;
+                case 'de':
+                    formattedDate = new Date().toLocaleDateString('de-DE', dateOptions);
+                    break;
+                case 'fr':
+                    formattedDate = new Date().toLocaleDateString('fr-FR', dateOptions);
+                    break;
+                default:
+                    formattedDate = new Date().toLocaleDateString('en-US', dateOptions);
+            }
+            
+            document.getElementById('current-date').textContent = formattedDate;
+        }
     </script>
 </body>
 </html>
